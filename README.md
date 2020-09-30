@@ -32,26 +32,31 @@ STATE CLASS GENDER AGE PAID
 TOP 10 most frequently used data manipulation functions
 
 
-Filter by rows
+1. Filter by rows
+Let's filter for men aged 79 or younger.
 
-1. Let's filter for men aged 79 or younger.
 data[AGE <= 79 & GENDER == "M"] #datatable
+
 data %>% filter(AGE <= 79 & GENDER == "M") #dplyr
 
 2. Select by columns
 Let's select the columns GENDER, AGE, and PAID.
+
 data[, .(GENDER, AGE, PAID)] #datatable
+
 data %>% select(GENDER, AGE, PAID) #dplyr
 
 3. Add New Columns
 Let's convert PAID from Dollars to Euros using a 0.85 Dollar/Euro conversion rate. The resulting new variable is added to our dataset.
-data[, PAID.IN.EURO := PAID * 0.85] #datatable
+
+data[, PAID.IN.EURO := PAID * 0.85] #datatable    
+
 data %>% mutate(PAID.IN.EURO = PAID * 0.85) #dplyr
 
 4. Delete Column
 let's delete the newly created variable
-data[, !c("PAID.IN.EURO")] #datatable
-data[, PAID.IN.EURO:= NULL] #datatable (alternative way)
+data[, !c("PAID.IN.EURO")] #datatable  
+data[, PAID.IN.EURO:= NULL] #datatable (alternative way)    
 select(data, -PAID.IN.EURO) #dplyr
 
 5. Create New Column
