@@ -7,29 +7,29 @@ In this post I compare the syntax of R's two most powerful data manipulation lib
 
 I will use R's built-in AutoClaims dataset of automobile insurance claims. Let's install and load the libraries and prepare the dataset for the exercise.
 
-#install.packages("dplyr")
-#install.packages("data.table")
-#install.packages("insuranceData")
-library(dplyr)
-library(data.table)
-library(insuranceData)
-data("AutoClaims") #load the dataset
-data <- AutoClaims #rename the dataset
-data <- data.table(data) #convert it to data.table
+#install.packages("dplyr")  
+#install.packages("data.table")  
+#install.packages("insuranceData")  
+library(dplyr)  
+library(data.table)  
+library(insuranceData)  
+data("AutoClaims") #load the dataset  
+data <- AutoClaims #rename the dataset  
+data <- data.table(data) #convert it to data.table  
 
-Data has 6773 rows and 5 columns. Let's see how the data looks.
+Data has 6773 rows and 5 columns. Let's see how the data looks.  
 
-> head(data)
-STATE CLASS GENDER AGE PAID
-1 STATE 14 C6 M 97 1134.44
-2 STATE 15 C6 M 96 3761.24
-3 STATE 15 C11 M 95 7842.31
-4 STATE 15 F6 F 95 2384.67
-5 STATE 15 F6 M 95 650.00
-6 STATE 15 F6 M 95 391.12
+> head(data)  
+STATE CLASS GENDER AGE PAID  
+1 STATE 14 C6 M 97 1134.44  
+2 STATE 15 C6 M 96 3761.24  
+3 STATE 15 C11 M 95 7842.31  
+4 STATE 15 F6 F 95 2384.67  
+5 STATE 15 F6 M 95 650.00  
+6 STATE 15 F6 M 95 391.12  
 
 
-TOP 10 most frequently used data manipulation functions
+TOP 10 most frequently used data manipulation functions  
 
 
 1. Filter by rows
